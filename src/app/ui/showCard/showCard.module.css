@@ -1,0 +1,32 @@
+.card {
+  display: inline-block;
+  border: solid gray 2px;
+  border-radius: 8px;
+  margin: 16px;
+  width: 26%;
+  height: 160px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+}
+.showName {
+  font-weight: bold;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 8px;
+  background-color: #55535394;
+  position: relative;
+  top: 20px;
+  display: inline-flex;
+  max-width: 85%;
+}
+
+@media (max-width: 500px) {
+  .card {
+    display: block;
+    width: unset;
+  }
+}
