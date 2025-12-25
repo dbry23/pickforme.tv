@@ -23,6 +23,20 @@
   display: inline-flex;
   max-width: 85%;
 }
+.cardLinks {
+  background-color: #333333bb;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 4px 0;
+  font-weight: bold;
+}
+.cardLinks a.linkAdd {
+  color: #60d06c;
+}
+.cardLinks a.linkRemove {
+  color: #ff5353;
+}
 
 @media (max-width: 500px) {
   .card {
