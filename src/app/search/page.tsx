@@ -11,19 +11,19 @@ export default function Page() {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setShowName(e.target.value);
-  }
+  };
 
   const handleClick = () => {
     showSearch();
-  }
+  };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
     if (event.key === "Enter") {
       showSearch();
     }
-  }
+  };
 
-  const showSearch = async function() {
+  const showSearch = async () => {
     setShows(null);
     setErrorMessage('');
     try {
@@ -35,7 +35,7 @@ export default function Page() {
         console.error('Failed to fetch shows', error);
       }
     }
-  }
+  };
 
   return (
     <>

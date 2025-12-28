@@ -1,9 +1,10 @@
 export type Show = {
-  id: string;
+  id: number;
   name: string;
   backdrop_path: string;
 };
 
+// for search, multiple shows returned
 export type ShowsResponse = {
   page: number;
   results: Show[];

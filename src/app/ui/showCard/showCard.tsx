@@ -3,7 +3,7 @@ import { isShowInLibrary, addRemoveShow } from '@/lib/localStorageService';
 import { Show } from '@/lib/definitions';
 import styles from './showCard.module.css';
 
-export default function ShowCard({show}: {show: Show}) {
+export default function ShowCard({ show }: { show: Show }) {
   const [isInLibrary, setIsInLibrary] = useState(isShowInLibrary(show.id));
 
   const tmdbImgUrlBase = 'https://image.tmdb.org/t/p/w780';
@@ -21,7 +21,7 @@ export default function ShowCard({show}: {show: Show}) {
   const handleClick = () => {
     addRemoveShow(show);
     setIsInLibrary((prev: boolean) => !prev);
-  }
+  };
 
   return (
     <div className={styles.card} style={backgroundStyle} onClick={handleClick}>

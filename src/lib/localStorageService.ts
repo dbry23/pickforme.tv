@@ -1,6 +1,6 @@
 import { Show } from './definitions';
 
-export function isShowInLibrary(id: string): boolean {
+export function isShowInLibrary(id: number): boolean {
   if (!localStorage.shows) {
     localStorage.shows = JSON.stringify([]);
   }
