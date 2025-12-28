@@ -22,3 +22,15 @@ export function addRemoveShow(show: Show): void {
 
   localStorage.shows = JSON.stringify(shows);
 }
+
+export function getShowIds(): number[] {
+  const shows = getShows();
+  return shows.map((s: Show) => s.id);
+}
+
+export function getShows(): Show[] {
+  if (!localStorage.shows) {
+    localStorage.shows = JSON.stringify([]);
+  }
+  return JSON.parse(localStorage.shows);
+}
