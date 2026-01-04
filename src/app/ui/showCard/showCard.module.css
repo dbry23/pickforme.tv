@@ -17,24 +17,26 @@
   padding: 8px 16px;
   color: white;
   border-radius: 8px;
-  background-color: #55535394;
+  background-color: rgba(85, 83, 83, 0.78);
   position: relative;
   top: 20px;
   display: inline-flex;
   max-width: 85%;
 }
-.cardLinks {
+.cardToggle {
   background-color: #333333bb;
   position: absolute;
   bottom: 0;
   width: 100%;
   padding: 4px 0;
   font-weight: bold;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
-.cardLinks a.linkAdd {
+.toggleTextAdd {
   color: #60d06c;
 }
-.cardLinks a.linkRemove {
+.toggleTextRemove {
   color: #ff5353;
 }
 
