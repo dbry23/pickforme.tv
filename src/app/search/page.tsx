@@ -2,7 +2,7 @@
 import { ChangeEvent, KeyboardEvent, useState } from 'react';
 import { findShows } from '@/lib/apiService';
 import { ShowsResponse } from '@/lib/definitions';
-import ShowList from '../ui/showList';
+import ShowList from '../ui/showList/showList';
 
 export default function Page() {
   const [showName, setShowName] = useState('');

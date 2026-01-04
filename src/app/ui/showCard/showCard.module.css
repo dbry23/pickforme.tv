@@ -1,10 +1,9 @@
 .card {
-  display: inline-block;
+  display: block;
   border: solid gray 2px;
   border-radius: 8px;
-  margin: 16px;
-  width: 26%;
-  height: 160px;
+  width: 100%;
+  aspect-ratio: 16/9;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -19,7 +18,7 @@
   border-radius: 8px;
   background-color: rgba(85, 83, 83, 0.78);
   position: relative;
-  top: 20px;
+  top: 1rem;
   display: inline-flex;
   max-width: 85%;
 }
@@ -40,9 +39,14 @@
   color: #ff5353;
 }
 
-@media (max-width: 500px) {
-  .card {
-    display: block;
-    width: unset;
+@media (max-width: 1100px) {
+  .showName {
+    font-size: .9rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .showName {
+    font-size: .8rem;
   }
 }
