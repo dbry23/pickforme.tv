@@ -10,6 +10,13 @@
   cursor: pointer;
   position: relative;
   text-align: center;
+  transition: linear 200ms;
+}
+.card:hover {
+  transition: linear 200ms;
+  zoom: 110%;
+  border: solid rgb(4, 118, 248) 4px;
+  border-radius: 10px;
 }
 .showName {
   font-weight: bold;
