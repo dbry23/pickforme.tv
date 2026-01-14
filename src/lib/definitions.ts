@@ -17,7 +17,7 @@ export type Season = {
   id: number;
   season_number: number;
   episode_count: number;
-}
+};
 
 export type Episode = {
   id: number;

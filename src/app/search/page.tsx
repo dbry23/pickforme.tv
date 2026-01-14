@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { ChangeEvent, KeyboardEvent, useState } from 'react';
 import { findShows } from '@/lib/apiService';
 import { ShowsResponse } from '@/lib/definitions';
@@ -18,7 +18,7 @@ export default function Page() {
   };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
-    if (event.key === "Enter") {
+    if (event.key === 'Enter') {
       showSearch();
     }
   };
@@ -50,15 +50,16 @@ export default function Page() {
         defaultValue={showName}
       ></input>
       <button onClick={handleClick}>Search</button>
-      {shows &&
+      {shows && (
         <>
           <hr />
-          {shows.total_results === 0
-            ? <span>No results found</span>
-            : <ShowList shows={shows.results} />
-          }
+          {shows.total_results === 0 ? (
+            <span>No results found</span>
+          ) : (
+            <ShowList shows={shows.results} />
+          )}
         </>
-      }
+      )}
     </>
   );
 }

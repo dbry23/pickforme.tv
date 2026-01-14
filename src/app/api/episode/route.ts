@@ -3,7 +3,7 @@ import { type NextRequest } from 'next/server';
 
 const baseUrl = 'https://api.themoviedb.org/3';
 const tmdbHeaders = new Headers();
-tmdbHeaders.append("Content-Type", "application/json");
+tmdbHeaders.append('Content-Type', 'application/json');
 tmdbHeaders.append('Authorization', `Bearer ${process.env.TMDB_API_KEY}`);
 
 export async function GET(request: NextRequest) {
@@ -15,10 +15,12 @@ export async function GET(request: NextRequest) {
   // get show details
   let tmdbUrl = `${baseUrl}/tv/${showId}`;
   const responseShow = await fetch(tmdbUrl, {
-    headers: tmdbHeaders
+    headers: tmdbHeaders,
   });
   if (!responseShow.ok) {
-    throw new Error(`Error occurred retrieving show from data source. ShowId: ${showId}, Status: ${responseShow.status}`);
+    throw new Error(
+      `Error occurred retrieving show from data source. ShowId: ${showId}, Status: ${responseShow.status}`
+    );
   }
 
   const showData: Show = await responseShow.json();
@@ -34,12 +36,15 @@ export async function GET(request: NextRequest) {
   const randomEpisodeNumber = Math.floor(Math.random() * episode_count) + 1;
 
   // get episode details
-  tmdbUrl = tmdbUrl + `/season/${season.season_number}/episode/${randomEpisodeNumber}`;
+  tmdbUrl =
+    tmdbUrl + `/season/${season.season_number}/episode/${randomEpisodeNumber}`;
   const responseEpisode = await fetch(tmdbUrl, {
-    headers: tmdbHeaders
+    headers: tmdbHeaders,
   });
   if (!responseEpisode.ok) {
-    throw new Error(`Error occurred retrieving episode from data source. ShowId: ${showId}, Season Number: ${season.season_number}, Episode Number: ${randomEpisodeNumber}, Status: ${responseEpisode.status}`);
+    throw new Error(
+      `Error occurred retrieving episode from data source. ShowId: ${showId}, Season Number: ${season.season_number}, Episode Number: ${randomEpisodeNumber}, Status: ${responseEpisode.status}`
+    );
   }
 
   const episodeData: Episode = await responseEpisode.json();

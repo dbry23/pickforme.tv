@@ -11,17 +11,15 @@ export default function Home() {
     // https://nextjs.org/docs/messages/react-hydration-error#solution-1-using-useeffect-to-run-on-the-client-only
     // need to disable the lint rule for calling setState synchronously within an effect
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsClient(true)
-  }, [])
+    setIsClient(true);
+  }, []);
 
   return (
     <div>
       <h1>Welcome to Pick For Me TV</h1>
-      <p>
-        This is just placeholder filler text for now.
-      </p>
+      <p>This is just placeholder filler text for now.</p>
       <hr />
-      <ShowList shows={isClient ? getShows(): []} />
+      <ShowList shows={isClient ? getShows() : []} />
     </div>
   );
 }

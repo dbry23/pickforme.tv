@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { getEpisode } from '@/lib/apiService';
@@ -38,11 +38,14 @@ export default function Page() {
   };
 
   const getImageWidth = (): string => {
-    const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    const viewportWidth = Math.max(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0
+    );
     const imageWidths = ['w300', 'w780', 'w1280'];
 
     for (const width of imageWidths) {
-      if (parseInt(width.replace('w','')) > viewportWidth) {
+      if (parseInt(width.replace('w', '')) > viewportWidth) {
         return width;
       }
     }
@@ -53,16 +56,18 @@ export default function Page() {
     <>
       <h1>Random episode</h1>
       {errorMessage && <p>{errorMessage}</p>}
-      {episode &&
+      {episode && (
         <>
           <h2>{episode.show.name}</h2>
           <h3>{episode.name}</h3>
-          <h4>Season: {episode.season_number} Episode: {episode.episode_number}</h4>
+          <h4>
+            Season: {episode.season_number} Episode: {episode.episode_number}
+          </h4>
           <h5>Air date: {episode.air_date}</h5>
           <div style={{ maxWidth: '80%', width: '100px' }}>
             <Image
               src={getImagePath()}
-              alt='Scene from episode'
+              alt="Scene from episode"
               width={512}
               height={0}
               sizes="512px 256px 128px"
@@ -71,7 +76,7 @@ export default function Page() {
           </div>
           <button onClick={getRandomEpisode}>Pick another episode</button>
         </>
-      }
+      )}
     </>
   );
 }
