@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
 
   // pick random season and episode
   const seasons = showData.seasons.filter((s: Season) => {
-    return s.season_number != 0; // specials are classified as season 0
+    return s.season_number !== 0; // specials are classified as season 0
   });
   const randomSeasonIndex = Math.floor(Math.random() * seasons.length);
   const season = seasons[randomSeasonIndex];
@@ -39,7 +39,7 @@ export async function GET(request: NextRequest) {
     headers: tmdbHeaders
   });
   if (!responseEpisode.ok) {
-    throw new Error(`Error occurred retrieving episode from data source. ShowId: ${showId}, Season Number: ${season.season_number}, Episode Number: ${randomEpisodeNumber}, Status: ${responseShow.status}`);
+    throw new Error(`Error occurred retrieving episode from data source. ShowId: ${showId}, Season Number: ${season.season_number}, Episode Number: ${randomEpisodeNumber}, Status: ${responseEpisode.status}`);
   }
 
   const episodeData: Episode = await responseEpisode.json();

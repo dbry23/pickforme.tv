@@ -14,8 +14,8 @@ export function addRemoveShow(show: Show): void {
   }
   let shows = JSON.parse(localStorage.shows);
 
-  if (shows.some((s: Show) => s.id == show.id)) {
-    shows = shows.filter((s: Show) => s.id != show.id);
+  if (shows.some((s: Show) => s.id === show.id)) {
+    shows = shows.filter((s: Show) => s.id !== show.id);
   } else {
     shows.push(show);
   }
