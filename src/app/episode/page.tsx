@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { getEpisode } from '@/lib/apiService';
 import { getShowIds } from '@/lib/localStorageService';
 import { Episode } from '@/lib/definitions';
+import { Button } from '@/components/ui/button';
 
 export default function Page() {
   const [episode, setEpisode] = useState<Episode | null>(null);
@@ -64,7 +65,7 @@ export default function Page() {
             Season: {episode.season_number} Episode: {episode.episode_number}
           </h4>
           <h5>Air date: {episode.air_date}</h5>
-          <div style={{ maxWidth: '80%', width: '100px' }}>
+          <div style={{ maxWidth: '80%' }}>
             <Image
               src={getImagePath()}
               alt="Scene from episode"
@@ -74,7 +75,7 @@ export default function Page() {
               style={{ height: 'auto' }}
             />
           </div>
-          <button onClick={getRandomEpisode}>Pick another episode</button>
+          <Button size="lg" onClick={getRandomEpisode}>Pick another episode</Button>
         </>
       )}
     </>
