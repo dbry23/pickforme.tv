@@ -5,6 +5,8 @@ import { getEpisode } from '@/lib/apiService';
 import { getShowIds } from '@/lib/localStorageService';
 import { Episode } from '@/lib/definitions';
 import { Button } from '@/components/ui/button';
+import { AlertCircleIcon } from 'lucide-react';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 export default function Page() {
   const [episode, setEpisode] = useState<Episode | null>(null);
@@ -56,7 +58,17 @@ export default function Page() {
   return (
     <>
       <h1>Random episode</h1>
-      {errorMessage && <p>{errorMessage}</p>}
+      {errorMessage && (
+        <div className="grid w-full max-w-xl items-start gap-4 my-8">
+          <Alert variant="destructive">
+            <AlertCircleIcon />
+            <AlertTitle>Error</AlertTitle>
+            <AlertDescription>
+              {errorMessage}
+            </AlertDescription>
+          </Alert>
+        </div>
+      )}
       {episode && (
         <>
           <h2>{episode.show.name}</h2>

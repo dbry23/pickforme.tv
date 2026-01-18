@@ -3,13 +3,14 @@ import { ChangeEvent, KeyboardEvent, useState } from 'react';
 import { findShows } from '@/lib/apiService';
 import { ShowsResponse } from '@/lib/definitions';
 import ShowList from '../ui/showList/showList';
-import { Search } from 'lucide-react';
+import { Search, AlertCircleIcon } from 'lucide-react';
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
 } from '@/components/ui/input-group';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 export default function Page() {
   const [showName, setShowName] = useState('');
@@ -47,7 +48,17 @@ export default function Page() {
   return (
     <>
       <h1>Search</h1>
-      {errorMessage && <p>{errorMessage}</p>}
+      {errorMessage && (
+        <div className="grid w-full max-w-xl items-start gap-4 my-8">
+          <Alert variant="destructive">
+            <AlertCircleIcon />
+            <AlertTitle>Error</AlertTitle>
+            <AlertDescription>
+              {errorMessage}
+            </AlertDescription>
+          </Alert>
+        </div>
+      )}
       <div className="flex w-full max-w-sm items-center gap-2">
         <InputGroup>
           <InputGroupInput
