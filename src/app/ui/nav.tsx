@@ -1,7 +1,16 @@
+'use client';
 import Link from 'next/link';
-import { Fragment } from 'react/jsx-runtime';
+import { useIsMobile } from '@/hooks/use-mobile';
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from '@/components/ui/navigation-menu';
 
 export default function Nav() {
+  const isMobile = useIsMobile();
+
   type NavItem = {
     href: string;
     title: string;
@@ -14,13 +23,16 @@ export default function Nav() {
   ];
 
   return (
-    <nav>
-      {navItems.map((item, index) => (
-        <Fragment key={item.title}>
-          <Link href={item.href}>{item.title}</Link>
-          {index < navItems.length - 1 && ' | '}
-        </Fragment>
-      ))}
-    </nav>
+    <NavigationMenu viewport={isMobile}>
+      <NavigationMenuList className="flex-wrap">
+        {navItems.map((item, index) => (
+          <NavigationMenuItem key={index}>
+            <NavigationMenuLink asChild>
+              <Link href={item.href}>{item.title}</Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        ))}
+      </NavigationMenuList>
+    </NavigationMenu>
   );
 }
