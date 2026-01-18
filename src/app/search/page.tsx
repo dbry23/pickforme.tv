@@ -3,6 +3,13 @@ import { ChangeEvent, KeyboardEvent, useState } from 'react';
 import { findShows } from '@/lib/apiService';
 import { ShowsResponse } from '@/lib/definitions';
 import ShowList from '../ui/showList/showList';
+import { Search } from 'lucide-react';
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+} from '@/components/ui/input-group';
 
 export default function Page() {
   const [showName, setShowName] = useState('');
@@ -41,15 +48,20 @@ export default function Page() {
     <>
       <h1>Search</h1>
       {errorMessage && <p>{errorMessage}</p>}
-      <span>Show name: </span>
-      <input
-        type="text"
-        name="show_name"
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
-        defaultValue={showName}
-      ></input>
-      <button onClick={handleClick}>Search</button>
+      <div className="flex w-full max-w-sm items-center gap-2">
+        <InputGroup>
+          <InputGroupInput
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            defaultValue={showName}
+          />
+          <InputGroupAddon align="inline-end">
+            <InputGroupButton variant="ghost" size="icon-sm" onClick={handleClick}>
+              <Search />
+            </InputGroupButton>
+          </InputGroupAddon>
+        </InputGroup>
+      </div>
       {shows && (
         <>
           <hr />
