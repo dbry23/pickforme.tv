@@ -24,19 +24,25 @@ export default function Nav() {
   ];
 
   return (
-    <NavigationMenu viewport={isMobile}>
-      <NavigationMenuList className="flex-wrap">
-        {navItems.map((item, index) => (
-          <>
-            <NavigationMenuItem key={index}>
-              <NavigationMenuLink asChild>
-                <Link href={item.href}>{item.title}</Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            {index < navItems.length - 1 && <Separator orientation="vertical" /> }
-          </>
-        ))}
-      </NavigationMenuList>
-    </NavigationMenu>
+    <nav className="bg-linear-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-slate-700">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <NavigationMenu viewport={isMobile}>
+          <NavigationMenuList className="flex-wrap">
+            {navItems.map((item, index) => (
+              <>
+                <NavigationMenuItem key={index}>
+                  <NavigationMenuLink asChild className="rounded-none">
+                    <Link href={item.href} className="text-slate-300 hover:bg-muted-foreground transition-colors duration-500 py-4 px-3 font-medium">
+                      {item.title}
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                {index < navItems.length - 1 && <Separator orientation="vertical" className="bg-slate-700" />}
+              </>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
+    </nav>
   );
 }
