@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import ShowList from './ui/showList/showList';
 import { getPopularShows } from '@/lib/utils';
+import { Separator } from '@/components/ui/separator';
 
 const tagLines = [
   'Channel surfing, perfected.',
@@ -42,7 +43,8 @@ export default function Home() {
             {tagLine}
           </button>
         </div>
-        <h2 className="text-3xl font-bold text-white mb-8 mt-12 border-t-solid border-t-2 pt-2 text-center">
+        <Separator />
+        <h2 className="text-3xl font-bold text-white mb-8 mt-12 text-center">
           Popular shows
         </h2>
         <ShowList shows={popularShows} />
