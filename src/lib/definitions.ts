@@ -2,7 +2,7 @@ export type Show = {
   id: number;
   name: string;
   backdrop_path: string;
-  seasons: Season[];
+  seasons?: Season[];
 };
 
 // for search, multiple shows returned
