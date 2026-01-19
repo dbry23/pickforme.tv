@@ -32,7 +32,7 @@ export default function Nav() {
               <>
                 <NavigationMenuItem key={index}>
                   <NavigationMenuLink asChild className="rounded-none">
-                    <Link href={item.href} className="text-slate-300 hover:bg-muted-foreground transition-colors duration-500 py-4 px-3 font-medium">
+                    <Link href={item.href} className="text-slate-300 hover:bg-muted-foreground focus:bg-transparent focus:hover:bg-muted-foreground transition-colors duration-500 py-4 px-3 font-medium">
                       {item.title}
                     </Link>
                   </NavigationMenuLink>
