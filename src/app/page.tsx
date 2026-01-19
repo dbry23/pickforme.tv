@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import ShowList from './ui/showList/showList';
+import dynamic from 'next/dynamic';
+const ShowList = dynamic(() => import('./ui/showList/showList'), { ssr: false }); // to disable SSR and prevent rehydration and localStorage issues
 import { getPopularShows } from '@/lib/utils';
 import { Separator } from '@/components/ui/separator';
 
@@ -39,6 +40,7 @@ export default function Home() {
           <button
             onClick={pickNewTagLine}
             className="text-xl sm:text-2xl text-slate-300 font-light cursor-default active:text-white"
+            suppressHydrationWarning // tagLine changes on each render, suppress warning because this is expected
           >
             {tagLine}
           </button>

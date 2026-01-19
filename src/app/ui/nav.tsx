@@ -8,6 +8,7 @@ import {
   NavigationMenuList,
 } from '@/components/ui/navigation-menu';
 import { Separator } from '@/components/ui/separator';
+import { Fragment } from 'react/jsx-runtime';
 
 export default function Nav() {
   const isMobile = useIsMobile();
@@ -29,8 +30,8 @@ export default function Nav() {
         <NavigationMenu viewport={isMobile}>
           <NavigationMenuList className="flex-wrap">
             {navItems.map((item, index) => (
-              <>
-                <NavigationMenuItem key={index}>
+              <Fragment key={index}>
+                <NavigationMenuItem>
                   <NavigationMenuLink asChild className="rounded-none">
                     <Link href={item.href} className="text-slate-300 hover:bg-muted-foreground focus:bg-transparent focus:hover:bg-muted-foreground transition-colors duration-500 py-4 px-3 font-medium">
                       {item.title}
@@ -38,7 +39,7 @@ export default function Nav() {
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 {index < navItems.length - 1 && <Separator orientation="vertical" className="bg-slate-700" />}
-              </>
+              </Fragment>
             ))}
           </NavigationMenuList>
         </NavigationMenu>
