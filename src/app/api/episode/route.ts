@@ -26,6 +26,12 @@ export async function GET(request: NextRequest) {
   const showData: Show = await responseShow.json();
 
   // pick random season and episode
+  if (!showData.seasons) {
+    throw new Error(
+      `Error occurred, season data unavailable for show. ShowId: ${showId}`
+    );
+  }
+
   const seasons = showData.seasons.filter((s: Season) => {
     return s.season_number !== 0; // specials are classified as season 0
   });

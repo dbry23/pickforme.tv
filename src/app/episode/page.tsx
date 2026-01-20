@@ -4,6 +4,10 @@ import Image from 'next/image';
 import { getEpisode } from '@/lib/apiService';
 import { getShowIds } from '@/lib/localStorageService';
 import { Episode } from '@/lib/definitions';
+import { Button } from '@/components/ui/button';
+import { AlertCircleIcon } from 'lucide-react';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Separator } from '@/components/ui/separator';
 
 export default function Page() {
   const [episode, setEpisode] = useState<Episode | null>(null);
@@ -53,30 +57,81 @@ export default function Page() {
   };
 
   return (
-    <>
-      <h1>Random episode</h1>
-      {errorMessage && <p>{errorMessage}</p>}
-      {episode && (
-        <>
-          <h2>{episode.show.name}</h2>
-          <h3>{episode.name}</h3>
-          <h4>
-            Season: {episode.season_number} Episode: {episode.episode_number}
-          </h4>
-          <h5>Air date: {episode.air_date}</h5>
-          <div style={{ maxWidth: '80%', width: '100px' }}>
-            <Image
-              src={getImagePath()}
-              alt="Scene from episode"
-              width={512}
-              height={0}
-              sizes="512px 256px 128px"
-              style={{ height: 'auto' }}
-            />
+    <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        {errorMessage && (
+          <div className="w-full max-w-2xl mb-8">
+            <Alert variant="destructive">
+              <AlertCircleIcon className="h-4 w-4" />
+              <AlertTitle>Error</AlertTitle>
+              <AlertDescription>
+                {errorMessage}
+              </AlertDescription>
+            </Alert>
           </div>
-          <button onClick={getRandomEpisode}>Pick another episode</button>
-        </>
-      )}
-    </>
+        )}
+
+        {episode && (
+          <div className="flex">
+            <div className="flex-1/3">
+              <p className="text-5xl text-white font-semibold mb-4">
+                {episode.show.name}
+              </p>
+              <p className="mb-4">
+                <span className="text-3xl text-slate-400 font-extralight me-3">
+                  Title
+                </span>
+                <span className="text-4xl text-white font-semibold">
+                  {episode.name}
+                </span>
+              </p>
+              <p className="mb-4">
+                <span className="text-2xl text-slate-400 font-extralight me-2">
+                  Season
+                </span>
+                <span className="text-3xl text-white font-semibold me-4">
+                  {episode.season_number}
+                </span>
+                <span className="text-2xl text-slate-400 font-extralight me-2">
+                  Episode
+                </span>
+                <span className="text-3xl text-white font-semibold">
+                  {episode.episode_number}
+                </span>
+              </p>
+              <p className="mb-2">
+                <span className="text-lg text-slate-400 font-extralight me-2">
+                  Air date
+                </span>
+                <span className="text-xl text-white">
+                  {episode.air_date}
+                </span>
+              </p>
+
+              <Button
+                onClick={getRandomEpisode}
+                className="mt-8 py-8 px-6 text-3xl"
+              >
+                Pick another episode
+              </Button>
+            </div>
+
+            <Separator orientation="vertical" className="mx-4" />
+
+            <div className="flex-2/3">
+              <Image
+                src={getImagePath()}
+                alt="Scene from episode"
+                width={1024}
+                height={0}
+                sizes="1024px 512px 256px 128px"
+                style={{ height: 'auto' }}
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
