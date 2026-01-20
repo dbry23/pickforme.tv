@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { getEpisode } from '@/lib/apiService';
 import { getShowIds } from '@/lib/localStorageService';
 import { Episode } from '@/lib/definitions';
@@ -12,6 +13,7 @@ import { Separator } from '@/components/ui/separator';
 export default function Page() {
   const [episode, setEpisode] = useState<Episode | null>(null);
   const [errorMessage, setErrorMessage] = useState('');
+  const [showNoEpisodeCollection, setShowNoEpisodeCollection] = useState<boolean>(false);
 
   const getRandomEpisode = async () => {
     setEpisode(null);
@@ -30,7 +32,12 @@ export default function Page() {
 
   useEffect(() => {
     (async () => {
-      await getRandomEpisode();
+      const showsIds = getShowIds();
+      if (showsIds.length === 0) {
+        setShowNoEpisodeCollection(true);
+      } else {
+        await getRandomEpisode();
+      }
     })();
   }, []);
 
@@ -68,6 +75,18 @@ export default function Page() {
                 {errorMessage}
               </AlertDescription>
             </Alert>
+          </div>
+        )}
+        {showNoEpisodeCollection && (
+          <div className="text-center py-16">
+            <p className="text-xl text-slate-400 mb-6">
+              You have no shows in your library. Please add a show first.
+            </p>
+            <Link href='/search'>
+              <Button size="lg">
+                Search for Shows
+              </Button>
+            </Link>
           </div>
         )}
 
