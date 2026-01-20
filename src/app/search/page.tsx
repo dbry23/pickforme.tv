@@ -24,16 +24,16 @@ export default function Page() {
   };
 
   const handleClick = () => {
-    showSearch();
+    searchForShows();
   };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
     if (event.key === 'Enter') {
-      showSearch();
+      searchForShows();
     }
   };
 
-  const showSearch = async () => {
+  const searchForShows = async () => {
     setShows(null);
     setErrorMessage('');
     setSearchedName(showName);
