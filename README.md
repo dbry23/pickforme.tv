@@ -7,7 +7,7 @@ pickforme.tv is a small Next.js web application (TypeScript + React) built with 
 - Language: TypeScript
 - Framework: Next.js (App Router)
 - UI: React (functional components)
-- Fonts: next/font (Geist)
+- Fonts: next/font (Inter)
 - Deployment: Vercel-ready
 
 ## Key features
@@ -30,12 +30,12 @@ pickforme.tv is a small Next.js web application (TypeScript + React) built with 
 
 - [x] Reimplemment functionality from old version
   - [x] Home page
-    - [x] Display user's selected shows
+    - [x] Display user's selected shows - refactored to separate page
   - [x] Search
     - [x] Handle add/removing shows
   - [x] Episode
     - [x] Get a random episode on load
     - [x] Button to select new episode
-- [ ] Styling
+- [x] Styling
 - [ ] User registration/login
 - [ ] Move from localStorage to SQL backend
