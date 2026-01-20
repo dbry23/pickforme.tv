@@ -22,6 +22,7 @@ export default function Nav() {
     { href: '/', title: 'Home' },
     { href: '/search', title: 'Search' },
     { href: '/episode', title: 'Episode' },
+    { href: '/about', title: 'About' },
   ];
 
   return (
