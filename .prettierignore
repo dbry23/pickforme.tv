@@ -1,0 +1,5 @@
+# shadcn ui components
+src/components/ui
+
+# shadcn hooks
+src/hooks/use-mobile.ts

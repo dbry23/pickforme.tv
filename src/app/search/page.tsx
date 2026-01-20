@@ -78,7 +78,12 @@ export default function Page() {
               className="text-white placeholder:text-slate-500"
             />
             <InputGroupAddon align="inline-end">
-              <InputGroupButton variant="ghost" size="icon-sm" className="hover:rounded-sm" onClick={handleClick}>
+              <InputGroupButton
+                variant="ghost"
+                size="icon-sm"
+                className="hover:rounded-sm"
+                onClick={handleClick}
+              >
                 <Search className="h-4 w-4" />
               </InputGroupButton>
             </InputGroupAddon>
@@ -89,7 +94,9 @@ export default function Page() {
           <>
             {shows.total_results === 0 ? (
               <div className="text-center py-12">
-                <p className="text-slate-400 text-lg">No results found for &quot;{searchedName}&quot;</p>
+                <p className="text-slate-400 text-lg">
+                  No results found for &quot;{searchedName}&quot;
+                </p>
               </div>
             ) : (
               <>

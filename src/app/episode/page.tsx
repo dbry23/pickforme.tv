@@ -129,7 +129,6 @@ export default function Page() {
                 className="rounded-lg"
               />
             </div>
-
           </div>
         )}
       </div>

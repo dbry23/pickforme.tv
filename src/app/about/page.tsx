@@ -13,28 +13,36 @@ export default function Page() {
 
         <div className="space-y-8 text-slate-300 text-lg leading-relaxed">
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Remember Channel Surfing?</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">
+              Remember Channel Surfing?
+            </h2>
             <p>
               You remember it, right? You&apos;d flip through the channels and suddenly—there it is. Your favorite show. An episode you haven&apos;t seen in years. You settle in, grab the remote, and just... watch. No scrolling, no deliberating, no existential crisis. Pure, unfiltered comfort TV.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">We Brought It Back</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">
+              We Brought It Back
+            </h2>
             <p>
               Pick For Me TV recreates that magic for the streaming era. No more infinite scrolling through algorithms designed to confuse you. Instead, tell us your favorite shows, and we&apos;ll randomly pluck an episode from your collection—the only thing you have to do is pull it up. It&apos;s like channel surfing, but every channel is a show you actually love.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">How It Works</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">
+              How It Works
+            </h2>
             <p>
               Add your favorite shows to your collection. Hit the button. We find a random episode. You watch it. Repeat until your couch needs a new imprint of your body. No decisions to make. No paralysis by choice. Just pick, watch, enjoy.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">The Magic</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">
+              The Magic
+            </h2>
             <p>
               Sometimes you&apos;ll get exactly what you wanted. Sometimes you&apos;ll stumble upon an episode you completely forgot about. Sometimes you&apos;ll wonder why you ever added that show in the first place. But that&apos;s the beauty of it—you&apos;re rediscovering your own taste, one random episode at a time.
             </p>

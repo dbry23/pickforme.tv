@@ -35,12 +35,17 @@ export default function Nav() {
               <Fragment key={index}>
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild className="rounded-none">
-                    <Link href={item.href} className="text-slate-300 hover:bg-muted-foreground focus:bg-transparent focus:hover:bg-muted-foreground transition-colors duration-500 py-4 px-3 font-medium">
+                    <Link
+                      href={item.href}
+                      className="text-slate-300 hover:bg-muted-foreground focus:bg-transparent focus:hover:bg-muted-foreground transition-colors duration-500 py-4 px-3 font-medium"
+                    >
                       {item.title}
                     </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
-                {index < navItems.length - 1 && <Separator orientation="vertical" className="bg-slate-700" />}
+                {index < navItems.length - 1 && (
+                  <Separator orientation="vertical" className="bg-slate-700" />
+                )}
               </Fragment>
             ))}
           </NavigationMenuList>
