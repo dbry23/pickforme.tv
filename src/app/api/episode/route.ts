@@ -55,5 +55,27 @@ export async function GET(request: NextRequest) {
 
   const episodeData: Episode = await responseEpisode.json();
   episodeData.show = showData;
-  return Response.json(episodeData);
+  const trimmedEpisodeData = trimEpisodeResponse(episodeData);
+  return Response.json(trimmedEpisodeData);
+}
+
+/**
+ * Trim a Episode object to include only essential properties.
+ * @param fullEpisode - The Episode object to trim
+ * @returns A trimmed Episode object containing only id, name, season_number, episode_number, still_path, air_date, overview
+ */
+function trimEpisodeResponse(fullEpisode: Episode): Episode {
+  const { id, name, season_number, episode_number, still_path, air_date, overview, show: fullShow } = fullEpisode;
+  const show = trimShowResponse(fullShow);
+  return { id, name, season_number, episode_number, still_path, air_date, overview, show };
+}
+
+/**
+ * Trim a Show object to include only essential properties.
+ * @param full_show - The Show object to trim
+ * @returns A trimmed Show object containing only id, name, backdrop_path
+ */
+function trimShowResponse(full_show: Show): Show {
+  const { id, name, backdrop_path } = full_show;
+  return { id, name, backdrop_path };
 }
