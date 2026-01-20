@@ -65,7 +65,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
         {errorMessage && (
           <div className="w-full max-w-2xl mb-8">
             <Alert variant="destructive">
@@ -91,9 +91,9 @@ export default function Page() {
         )}
 
         {episode && (
-          <div className="flex">
-            <div className="flex-1/3">
-              <p className="text-5xl text-white font-semibold mb-4">
+          <div className="md:flex">
+            <div className="md:flex-1/3">
+              <p className="text-5xl text-white font-semibold mb-4 me-3">
                 {episode.show.name}
               </p>
               <p className="mb-4">
@@ -132,15 +132,16 @@ export default function Page() {
 
               <Button
                 onClick={getRandomEpisode}
-                className="mt-8 py-8 px-6 text-3xl"
+                className="mt-4 md:mt-8 py-8 px-6 text-3xl"
               >
                 Pick another episode
               </Button>
             </div>
 
-            <Separator orientation="vertical" className="mx-4" />
+            <Separator orientation="vertical" className="mx-4 hidden md:block" />
+            <Separator orientation="horizontal" className="my-4 md:hidden" />
 
-            <div className="flex-2/3">
+            <div className="md:flex-2/3">
               <Image
                 src={getImagePath()}
                 alt="Scene from episode"

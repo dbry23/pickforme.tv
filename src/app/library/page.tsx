@@ -17,7 +17,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-white mb-8">
           My Library
         </h1>

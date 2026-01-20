@@ -31,8 +31,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+        <div className="text-center mb-8">
           <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-white mb-4">
             Pick For Me TV
           </h1>
@@ -45,7 +45,7 @@ export default function Home() {
           </button>
         </div>
         <Separator />
-        <h2 className="text-3xl font-bold text-white mb-8 mt-12 text-center">
+        <h2 className="text-3xl font-bold text-white mb-2 mt-8 text-center">
           Popular shows
         </h2>
         <ShowList shows={popularShows} />
