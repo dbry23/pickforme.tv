@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
-import dynamic from 'next/dynamic';
-const ShowList = dynamic(() => import('./ui/showList/showList'), { ssr: false }); // to disable SSR and prevent rehydration and localStorage issues
+import ShowList from './ui/showList/showList';
 import { getPopularShows } from '@/lib/utils';
 import { Separator } from '@/components/ui/separator';
 
