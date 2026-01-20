@@ -21,6 +21,7 @@ export default function Nav() {
   const navItems: NavItem[] = [
     { href: '/', title: 'Home' },
     { href: '/search', title: 'Search' },
+    { href: '/library', title: 'Library' },
     { href: '/episode', title: 'Episode' },
     { href: '/about', title: 'About' },
   ];
