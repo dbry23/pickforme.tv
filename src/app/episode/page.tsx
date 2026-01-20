@@ -126,6 +126,9 @@ export default function Page() {
                   {episode.air_date}
                 </span>
               </p>
+              <p className="mb-2 text-slate-300 me-2">
+                {episode.overview}
+              </p>
 
               <Button
                 onClick={getRandomEpisode}
