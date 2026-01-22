@@ -76,6 +76,7 @@ export default function Page() {
               defaultValue={showName}
               placeholder="Search for a show..."
               className="text-white placeholder:text-slate-500"
+              autoFocus
             />
             <InputGroupAddon align="inline-end">
               <InputGroupButton
