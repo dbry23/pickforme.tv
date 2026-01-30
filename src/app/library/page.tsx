@@ -36,7 +36,7 @@ export default function Page() {
           </div>
         ) : (
           <>
-            <p className="text-lg text-slate-300 mb-8">
+            <p className="text-lg text-slate-300 mb-2">
               You have <span className="font-bold text-white">{shows.length}</span> show{shows.length !== 1 ? 's' : ''} in your library
             </p>
             <ShowList shows={shows} />
