@@ -50,10 +50,10 @@ export default function Nav() {
           </div>
         )}
 
-        {/* Desktop menu - always visible */}
+        {/* Desktop menu */}
         {!isMobile && (
           <div className="flex items-center">
-            <div className="flex items-center gap-2 py-4 px-3">
+            <div className="flex items-center gap-2 px-3">
               <Logo className="text-slate-300" size={24} />
               <span className="text-white font-semibold">Pick For Me TV</span>
             </div>
@@ -82,7 +82,7 @@ export default function Nav() {
           </div>
         )}
 
-        {/* Mobile menu - collapsible */}
+        {/* Mobile menu */}
         {isMobile && isMenuOpen && (
           <div className="pb-4">
             {navItems.map((item, index) => (
