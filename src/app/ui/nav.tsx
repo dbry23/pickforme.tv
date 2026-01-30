@@ -11,6 +11,7 @@ import {
 import { Separator } from '@/components/ui/separator';
 import { Menu, X } from 'lucide-react';
 import { Fragment } from 'react/jsx-runtime';
+import Logo from '@/components/ui/logo';
 
 export default function Nav() {
   const isMobile = useIsMobile();
@@ -35,7 +36,10 @@ export default function Nav() {
         {/* Mobile menu button */}
         {isMobile && (
           <div className="flex justify-between items-center py-4">
-            <span className="text-white font-bold text-lg">Pick For Me TV</span>
+            <div className="flex items-center gap-2">
+              <Logo className="text-slate-300" size={28} />
+              <span className="text-white font-bold text-lg">Pick For Me TV</span>
+            </div>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-slate-300 hover:text-white transition-colors p-2"
@@ -48,27 +52,34 @@ export default function Nav() {
 
         {/* Desktop menu - always visible */}
         {!isMobile && (
-          <NavigationMenu viewport={isMobile}>
-            <NavigationMenuList className="flex-wrap">
-              {navItems.map((item, index) => (
-                <Fragment key={index}>
-                  <NavigationMenuItem>
-                    <NavigationMenuLink asChild className="rounded-none">
-                      <Link
-                        href={item.href}
-                        className="text-slate-300 hover:bg-muted-foreground focus:bg-transparent focus:hover:bg-muted-foreground transition-colors duration-500 py-4 px-3 font-medium"
-                      >
-                        {item.title}
-                      </Link>
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                  {index < navItems.length - 1 && (
-                    <Separator orientation="vertical" className="bg-slate-700" />
-                  )}
-                </Fragment>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
+          <div className="flex items-center">
+            <div className="flex items-center gap-2 py-4 px-3">
+              <Logo className="text-slate-300" size={24} />
+              <span className="text-white font-semibold">Pick For Me TV</span>
+            </div>
+            <Separator orientation="vertical" className="bg-slate-700 h-auto" />
+            <NavigationMenu viewport={isMobile}>
+              <NavigationMenuList className="flex-wrap">
+                {navItems.map((item, index) => (
+                  <Fragment key={index}>
+                    <NavigationMenuItem>
+                      <NavigationMenuLink asChild className="rounded-none">
+                        <Link
+                          href={item.href}
+                          className="text-slate-300 hover:bg-muted-foreground focus:bg-transparent focus:hover:bg-muted-foreground transition-colors duration-500 py-4 px-3 font-medium"
+                        >
+                          {item.title}
+                        </Link>
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                    {index < navItems.length - 1 && (
+                      <Separator orientation="vertical" className="bg-slate-700" />
+                    )}
+                  </Fragment>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
         )}
 
         {/* Mobile menu - collapsible */}

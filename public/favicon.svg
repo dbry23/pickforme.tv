@@ -1,0 +1,14 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- TV Screen -->
+  <rect x="2" y="4" width="28" height="20" rx="2" stroke="#e2e8f0" stroke-width="2" fill="#0f172a"/>
+
+  <!-- TV Stand -->
+  <path d="M12 24 L12 28 M20 24 L20 28 M9 28 L23 28" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Shuffle/Dice dots inside TV -->
+  <circle cx="10" cy="10" r="1.5" fill="#94a3b8"/>
+  <circle cx="10" cy="18" r="1.5" fill="#94a3b8"/>
+  <circle cx="16" cy="14" r="1.5" fill="#94a3b8"/>
+  <circle cx="22" cy="10" r="1.5" fill="#94a3b8"/>
+  <circle cx="22" cy="18" r="1.5" fill="#94a3b8"/>
+</svg>

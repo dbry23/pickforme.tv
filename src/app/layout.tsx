@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   title: 'Pick For Me TV',
   description:
     "Don't want to pick something to watch? Don't even want to pick a show? Use Pick For Me TV to randomly pick an episode from all your favorite shows!",
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
