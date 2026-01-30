@@ -9,10 +9,14 @@ tmdbHeaders.append('Authorization', `Bearer ${process.env.TMDB_API_KEY}`);
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const show_name = searchParams.get('show_name');
+  const page = searchParams.get('page') || '1';
 
-  const response = await fetch(`${baseUrl}/search/tv?query=${show_name}`, {
-    headers: tmdbHeaders,
-  });
+  const response = await fetch(
+    `${baseUrl}/search/tv?query=${show_name}&page=${page}`,
+    {
+      headers: tmdbHeaders,
+    }
+  );
 
   if (!response.ok) {
     throw new Error(

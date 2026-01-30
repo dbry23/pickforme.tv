@@ -2,8 +2,13 @@ import { ShowsResponse, Episode } from './definitions';
 
 const baseUrl = '/api';
 
-export async function findShows(show_name: string): Promise<ShowsResponse> {
-  const response = await fetch(`${baseUrl}/shows?show_name=${show_name}`);
+export async function findShows(
+  show_name: string,
+  page: number = 1
+): Promise<ShowsResponse> {
+  const response = await fetch(
+    `${baseUrl}/shows?show_name=${show_name}&page=${page}`
+  );
 
   if (!response.ok) {
     throw new Error('Error retrieving shows from API');
