@@ -3,6 +3,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import { Geist, Geist_Mono, Inter } from 'next/font/google';
 import Nav from './ui/nav';
+import Footer from './ui/footer';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
@@ -30,13 +31,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div>
-          <main>
-            <Nav />
-            {children}
-          </main>
-        </div>
+      <body className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-screen`}>
+        <Nav />
+        <main className="flex-1">
+          {children}
+        </main>
+        <Footer />
         <SpeedInsights />
         <Analytics />
       </body>
