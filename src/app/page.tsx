@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import ShowList from './ui/showList/showList';
+import ShowList from './ui/show-list';
 import { getPopularShows } from '@/lib/utils';
 import { Separator } from '@/components/ui/separator';
 
