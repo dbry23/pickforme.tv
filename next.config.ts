@@ -4,7 +4,13 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   images: {
-    remotePatterns: [new URL('https://image.tmdb.org/t/p/**')],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'image.tmdb.org',
+        pathname: '/t/p/**',
+      },
+    ],
   },
 };
 

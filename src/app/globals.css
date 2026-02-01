@@ -47,6 +47,13 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@theme {
+  --color-gray-light: #555353c7;
+  --color-gray-dark: #333333bb;
+  --color-green-add: #60d06c;
+  --color-red-remove: #ff5353;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

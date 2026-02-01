@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import ShowList from '../ui/showList/showList';
+import ShowList from '../ui/show-list';
 import { getShows } from '@/lib/localStorageService';
 import { Show } from '@/lib/definitions';
 import { Button } from '@/components/ui/button';

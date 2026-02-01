@@ -3,7 +3,7 @@ import { ChangeEvent, KeyboardEvent, useState } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { findShows } from '@/lib/apiService';
 import { ShowsResponse } from '@/lib/definitions';
-import ShowList from '../ui/showList/showList';
+import ShowList from '../ui/show-list';
 import { Search, AlertCircleIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
